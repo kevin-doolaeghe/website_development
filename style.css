@@ -1,3 +1,5 @@
+/* page */
+
 *,
 ::before,
 ::after {
@@ -8,8 +10,117 @@
 
 body {
     font-family: Montserrat, Helvetica, sans-serif;
-    background: #f4f4f4;
 }
+
+.section-header {
+    margin: 20px auto 10px;
+}
+
+p {
+    text-align: justify;
+}
+
+@media (max-width: 1000px) {
+    .section-header {
+        font-size: 1.6em;
+    }
+    
+    p {
+        font-size: .8em;
+    }
+}
+
+/* content */
+
+.main-container {
+    background: linear-gradient(
+        170deg,
+        #fff,
+        #ccc
+    );
+    position: relative;
+    top: 60px;
+    left: 0;
+    padding: 10px 30px 30px;
+}
+
+@media (max-width: 1000px) {
+    .main-container {
+        top: 0;
+    }
+}
+
+/* cards */
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fill,
+        minmax(300px, 1fr)
+    );
+    grid-gap: 20px;
+    padding: 0 20px;
+    max-width: 1300px;
+    margin: 100px auto 0;
+}
+
+.card {
+    background: #f1f1f1;
+}
+
+.top-img {
+    display: block;
+    height: 200px;
+    width: 100%;
+    background: #4c4c4c;
+    object-fit: cover;
+}
+
+.top-img.skeleton-anim {
+    animation: skeleton 0.8s ease-in-out infinite alternate;
+}
+
+.content {
+    padding: 15px;
+}
+
+.skeleton-title,
+.skeleton-text {
+    width: 60%;
+    background: #4c4c4c;
+    animation: skeleton 0.8s ease-in-out infinite alternate;
+}
+
+.skeleton-title {
+    height: 20px;
+}
+
+.skeleton-text {
+    margin-top: 10px;
+    height: 10px;
+}
+
+.skeleton-text:first-of-type {
+    width: 90%;
+}
+
+@keyframes skeleton {
+    to {
+        opacity: 0.6;
+    }
+}
+
+.card-title {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.card-text {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+/* navbar */
 
 nav {
     position: fixed;
@@ -17,6 +128,7 @@ nav {
     display: flex;
     align-items: center;
     padding: 15px 25px;
+    z-index: 1;
     background-color: #fafafa;
     box-shadow: inset 0px -1px 0px #c5c5c6;
 }
@@ -38,12 +150,10 @@ nav {
 
 .nav-icon img {
     width: 30px;
-    /* transform: rotate(-17deg) translateX(5px); */
 }
 
 .hamburger {
     display: none;
-    z-index: 1;
 }
 
 .navlinks-container a {
@@ -95,13 +205,6 @@ nav {
 
 .sign-user {
     display: none;
-}
-
-.main-container {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    margin: 20px;
 }
 
 @media (max-width: 1000px) {
@@ -178,9 +281,10 @@ nav {
         background: #fafafa;
         top: 100%;
         left: 0;
-        height: 100vh;
+        height: fit-content; /* 100vh */
         padding: 15px 50px 15px 20px;
         border-right: 1px solid #c5c5c6;
+        border-bottom: 1px solid #c5c5c6;
         transform: translate(-100%);
     }
     
