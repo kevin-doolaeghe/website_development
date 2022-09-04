@@ -16,8 +16,18 @@ body {
     margin: 20px auto 10px;
 }
 
+.section-header::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20%;
+    height: 1px;
+    background: #333;
+}
+
 p {
     text-align: justify;
+    margin: 10px auto;
 }
 
 @media (max-width: 1000px) {
@@ -61,7 +71,7 @@ p {
     grid-gap: 20px;
     padding: 0 20px;
     max-width: 1300px;
-    margin: 100px auto 0;
+    margin: 20px auto;
 }
 
 .card {

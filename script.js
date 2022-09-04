@@ -23,7 +23,6 @@ const createCards = data => {
                 </div>
             </div>
         `;
-
         cardList += newCard;
     }
     cardGrid.innerHTML = cardList;
